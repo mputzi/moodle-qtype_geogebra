@@ -41,7 +41,7 @@ class qtype_geogebra_renderer extends qtype_renderer {
         $b64inputname = $qa->get_qt_field_name('ggbbase64');
 
         $b64inputattributes = array(
-                'type'  => 'hidden',
+                'type'  => 'hidden', 
                 'name'  => $b64inputname,
                 'value' => $b64current,
                 'id'    => $b64inputname,
@@ -54,7 +54,7 @@ class qtype_geogebra_renderer extends qtype_renderer {
         $xmlinputname = $qa->get_qt_field_name('ggbxml');
 
         $xmlinputattributes = array(
-                'type'  => 'hidden',
+                'type'  => 'hidden', 
                 'name'  => $xmlinputname,
                 'value' => $xmlcurrent,
                 'id'    => $xmlinputname,
@@ -67,7 +67,7 @@ class qtype_geogebra_renderer extends qtype_renderer {
         $answerinputname = $qa->get_qt_field_name('answer');
 
         $answerinputattributes = array(
-                'type'  => 'hidden',
+                'type'  => 'hidden', 
                 'name'  => $answerinputname,
                 'value' => $answercurrent,
                 'id'    => $answerinputname,
@@ -80,7 +80,7 @@ class qtype_geogebra_renderer extends qtype_renderer {
         $exerciseinputname = $qa->get_qt_field_name('exerciseresult');
 
         $exerciseinputattributes = array(
-                'type'  => 'hidden',
+                'type'  => 'hidden', 
                 'name'  => $exerciseinputname,
                 'value' => $exercisecurrent,
                 'id'    => $exerciseinputname,
@@ -90,7 +90,8 @@ class qtype_geogebra_renderer extends qtype_renderer {
         $result .= html_writer::empty_tag('input', $exerciseinputattributes);
         $questiontext = $question->format_questiontext($qa);
 
-        $result .= html_writer::tag('div', $questiontext, array('class' => 'qtext', 'style' => 'visibility: hidden;'));
+        /*$result .= html_writer::tag('div', $questiontext, array('class' => 'qtext', 'style' => 'visibility: hidden;'));*/
+        $result .= html_writer::tag('div', $questiontext, array('class' => 'qtext'));
 
         $ggbdivname = $qa->get_qt_field_name('ggbdiv');
         $result .= html_writer::div('', '', array('id' => $ggbdivname));
